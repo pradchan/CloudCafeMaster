@@ -1,5 +1,5 @@
 <!--
- Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
 <!--
@@ -30,7 +30,7 @@
       <button id="userMenu"
         data-bind="ojComponent: {component: 'ojButton', label: userName,
         display: $root.smallOnly() ? 'icons' : 'all',
-        icons: $root.smallOnly() ? {start: 'oj-icon demo-avatar-icon', end: null} : {end: null},
+        icons: $root.smallOnly() ? {start: 'oj-icon demo-avatar-icon', end: null} : {end: 'oj-component-icon oj-button-menu-dropdown-icon'},
         chroming: 'half', menu: '#demoAppheaderGlobalNavMenuId'}">
       </button>
       <ul id="demoAppheaderGlobalNavMenuId" data-bind="ojComponent: {component: 'ojMenu', select: menuItemSelect}" style="display:none">

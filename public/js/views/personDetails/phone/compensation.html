@@ -1,5 +1,5 @@
 <!--
- Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
 <div class="oj-panel" style="margin-bottom:10px">
@@ -10,10 +10,10 @@
             component: 'ojChart', 
             type: 'bar',
             selectionMode: 'none',
-            orientation: orientationValue,
-            stack: stackValue,
-            series: barSeriesValue, 
-            groups: barGroupsValue, 
+            orientation: $parent.orientationValue,
+            stack: $parent.stackValue,
+            series: $parent.barSeriesValue, 
+            groups: $parent.barGroupsValue, 
             animationOnDisplay: 'auto',
             animationOnDataChange: 'auto',
             dataCursor: 'on',
@@ -30,7 +30,7 @@
     <div data-bind="ojComponent: {
             component: 'ojChart', 
             type: 'pie', 
-            series: pieSeriesValue,
+            series: $parent.pieSeriesValue,
             animationOnDisplay: 'auto',
             animationOnDataChange: 'auto',
             styleDefaults: {threeDEffect: 'off'},

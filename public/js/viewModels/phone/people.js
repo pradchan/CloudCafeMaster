@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
  */
 define(['ojs/ojcore', 'knockout', 'jquery', 'utils', 'data/data', 'ojs/ojrouter', 'ojs/ojknockout', 'promise', 'ojs/ojlistview', 'ojs/ojmodel', 'ojs/ojpagingcontrol', 'ojs/ojpagingcontrol-model'],
@@ -64,12 +64,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'utils', 'data/data', 'ojs/ojrouter'
                     return new oj.ArrayTableDataSource(self.filteredAllPeople(), {idAttribute: 'empId'});
                 });
 
-                self.cardViewPagingDataSource = ko.computed(function () {
-                    return new oj.ArrayPagingDataSource((self.filteredAllPeople()));
-                });
-
                 self.cardViewDataSource = ko.computed(function () {
-                    return self.cardViewPagingDataSource().getWindowObservable();
+                    return new oj.PagingTableDataSource(self.listViewDataSource());
                 });
 
                 self.getPhoto = function (empId) {

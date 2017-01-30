@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
  */
 /**
@@ -13,16 +13,15 @@ requirejs.config({
     //injector:mainReleasePaths
      {
         'knockout': 'libs/knockout/knockout-3.4.0',
-        'knockout-amd-helpers': 'libs/knockout/knockout-amd-helpers.min',
-        'jquery': 'libs/jquery/jquery-2.1.3.min',
-        'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.11.4.min',
-        'promise': 'libs/es6-promise/promise-1.0.0.min',
-        'ojs': 'libs/oj/v2.0.1/min',
-        'ojL10n': 'libs/oj/v2.0.1/ojL10n',
-        'ojtranslations': 'libs/oj/v2.0.1/resources',
+        'jquery': 'libs/jquery/jquery-3.1.0.min',
+        'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.0.min',
+        'promise': 'libs/es6-promise/es6-promise.min',
+        'ojs': 'libs/oj/v2.3.0/min',
+        'ojL10n': 'libs/oj/v2.3.0/ojL10n',
+        'ojtranslations': 'libs/oj/v2.3.0/resources',
         'signals': 'libs/js-signals/signals.min',
         'text': 'libs/require/text',
-        'hammerjs': 'libs/hammer/hammer-2.0.4.min',
+        'hammerjs': 'libs/hammer/hammer-2.0.8.min',
         'moment': 'libs/moment/moment.min',
         'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0.min'
     }
@@ -61,7 +60,6 @@ require(['ojs/ojcore',
     'jquery',
     'utils',
     'ojs/ojrouter',
-    'knockout-amd-helpers',
     'ojs/ojknockout',
     'ojs/ojmodule',
     'ojs/ojbutton',
@@ -70,9 +68,6 @@ require(['ojs/ojcore',
     'ojs/ojinputtext'
 ],
         function (oj, ko, $, utils) {
-
-            ko.amdTemplateEngine.defaultPath = "views";
-            ko.amdTemplateEngine.defaultSuffix = ".html";
             var router = oj.Router.rootInstance;
             router.configure({
                 'dashboard': {label: 'Dashboard', isDefault: true},
@@ -92,13 +87,6 @@ require(['ojs/ojcore',
 
             });
 
-            function initTheme() {
-                var theme = sessionStorage.getItem("theme");
-                if (theme) {
-                    var csslink = document.getElementById('css');
-                    csslink.href = theme;
-                }
-            }
 
             function MainViewModel() {
                 var self = this;
@@ -149,7 +137,6 @@ require(['ojs/ojcore',
                     function () {
                         ko.applyBindings(new MainViewModel(), document.getElementById('globalBody'));
                         $('#globalBody').show();
-                        initTheme();
                     },
                     function (error) {
                         oj.Logger.error('Error in root start: ' + error.message);

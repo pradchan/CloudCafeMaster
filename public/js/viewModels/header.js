@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
  */
 /**
@@ -31,9 +31,6 @@ define(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojnavigationlist', 'ojs
             switch (ui.item.attr("id")) {
                 case "About":
                     $("#aboutDialog").ojDialog("open");
-                    break;
-                case "Toggle Theme":
-                    self.toggleTheme();
                     break;
                 default:
             }
@@ -69,9 +66,6 @@ define(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojnavigationlist', 'ojs
                 {"label": "Sign Out",
                     "url": "#"
                 },
-                {"label": "Toggle Theme",
-                    "url": "#"
-                },
                 {"label": "About",
                     "url": "#"
                 }
@@ -93,7 +87,8 @@ define(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojnavigationlist', 'ojs
                     "edge": "start",
                     "displayMode": "push",
                     "selector": "#appDrawer",
-                    "selection": "selectedItem"
+                    "selection": "selectedItem",
+                    "content": '#pageContent'
                 };
 
         //
@@ -121,20 +116,6 @@ define(['knockout', 'ojs/ojcore', 'ojs/ojknockout', 'ojs/ojnavigationlist', 'ojs
             }];
 
         self.dataSource = new oj.ArrayTableDataSource(appNavData, {idAttribute: 'id'});
-        //self.selectedItem = ko.observable("dashboard");
-
-        self.toggleTheme = function () {
-            var altaTheme = "css/libs/oj/v1.1.2/alta/oj-alta-min.css";
-            var projectorTheme = "css/samples/demothemes/alta/projector/demo-projector-alta-min.css";
-            var csslink = document.getElementById("css");
-            if (altaTheme !== csslink.attributes.href.value)
-            {
-                sessionStorage.setItem("theme",altaTheme);
-            } else {
-                sessionStorage.setItem("theme",projectorTheme);
-            }
-            location.reload();
-        };
 
         self.toggleAppDrawer = function ()
         {

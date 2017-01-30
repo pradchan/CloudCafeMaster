@@ -6,6 +6,15 @@
         This is where any of your application specific styles should be included
 */
 
+.sendIntoSpace{
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+} 
+
 .demo-page-content-area {
     background: #ffffff;
     border-radius: 3px;
@@ -135,7 +144,7 @@
     margin: auto;
     width:108px;
     height:108px;
-    border: 1px solid #d5dfe5;
+    /*border: 1px solid #d5dfe5;*/
     border-radius: 55px;
     background-color: #fff;
 }
@@ -246,11 +255,11 @@
 
 .demo-employee-contact-label{
     margin-left: 10px;    
-    margin-top: 10px;
+    margin-top: 5px;
     color: #045fab;
     font-family: "Helvetica Neue", Helvetica, Ariel, sans-serif;
     font-size: 16px;
-    display: table-cell;
+    /*display: table-cell;*/
     vertical-align:middle;
 }
 
@@ -293,7 +302,7 @@
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    left: -8px;
+    left: -2px;
 }
 
 .demo-breadcrumb{
@@ -309,9 +318,9 @@
 }
 /*===========CODE MODIFIED FOR TABS STARTS============*/
 #breadcrumb_section, .justifyCenter {
-     max-width: 1440px;
-     margin: 0px auto;
-     padding: 10px;
+    max-width: 1440px;
+    margin: 0px auto;
+    padding: 10px;
 }
 .altaspace {
     padding-right: 0px;
@@ -412,7 +421,51 @@ div.altaspace.selected div.oj-panel span.tiletitle {
     color: #4a85c5;
     font-size: 40px;
     font-weight: bold;
-    padding: 7% 0px;
+    /*padding: 2% 0px;*/
+}
+
+
+
+
+.tileInfoAlign {
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -62px;
+    -webkit-margin-before: -82px;
+}
+
+@media print and (orientation: landscape), screen and (min-width: 768px) and (max-width: 1023px) {
+    .tileInfoAlign {
+        align-items: flex-end; 
+        justify-content: center; 
+        flex-direction: column;
+        margin-top: -62px;
+        -webkit-margin-before: -75px;       
+    }
+
+
+}
+@media print and (orientation: landscape), screen and (min-width: 1024px) and (max-width: 1280px) {
+    .tileInfoAlign {
+        align-items: flex-end; 
+        justify-content: center; 
+        flex-direction: column;
+        margin-top: -62px;
+        -webkit-margin-before: -79px;        
+    }
+
+    .tileInfo div.tileValue {
+        color: #4a85c5;
+        font-size: 40px;
+        font-weight: bold;
+        /*padding: 2% 0px;*/
+    }
+
+}
+
+.tileInfo div.tileLabel {
+
 }
 
 /*.oj-navigationlist-horizontal .oj-navigationlist-element {
@@ -503,7 +556,7 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     background-image: none;
 }
 #templateList #AboutMe {
-    background-color: #81BB5F;
+    background-color: #488500;
     text-align: center;
 }
 #templateList #AveragePerformance {
@@ -521,10 +574,10 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     background-color: #d5e7c7;
 }
 #templateList #CompensationRatio {
-    background-color: #5785d3;
+    background-color: #3a76cb;
 }
 #templateList #MyTeamActivities {
-    background-color: #414557;
+    background-color: #413557;
 }
 #templateList #AverageRatings {
     background-color: #e5e8ea;
@@ -551,19 +604,19 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     font-family: helvetica;
 }
 #MyTeamActivities div div.training-color {
-    color: #4A85C5;
+    color: #6594ce;
     font-size: 52px;
     font-weight: lighter;
     font-family: helvetica;
 }
 #MyTeamActivities div div.event-color, div.performance-color {
-    color: #3caf85;
+    color: #009862;
     font-size: 52px;
     font-weight: lighter;
     font-family: helvetica;
 }
 #MyTeamActivities div div.timeoff-color, .potential-color {
-    color: #F4AA46;
+    color: #b57800;
     font-size: 52px;
     font-weight: lighter;
     font-family: helvetica;
@@ -577,6 +630,11 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     font-weight: lighter;
     font-family: helvetica;
 }
+/* reduce the top margin when in a masonry layout tile so that the 
+   tile content does not overflow the bottom of the tile */
+#templateList #MyTeam .dastopmargin {
+    margin-top: 246px;
+}
 .aboutmetitle, .notifytitle {
     margin-top: 15px;
     color: #ffffff;
@@ -586,7 +644,7 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     text-align: left;
 }
 .notifytitle {
-    color: #647277;
+    color: #5b6b70;
 }
 #CompensationRatio .notifytitle {
     color: #ffffff;
@@ -722,7 +780,7 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     color: #ffffff;
 }
 #MyNotifications .tcrow .theadcount label {
-    color: #76B417;
+    color: #6aa400;
 }
 #MyNotifications .tcrow .tnewhire label {
     color: #0572CE;
@@ -731,7 +789,7 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     color: #ff0000;
 }
 .curquater, .notifynews, .notifycompensation {
-    color: #ABB5B9;
+    color: #B2BBBF;
     text-align: center;
     text-transform: uppercase;
     font-size: 12px;
@@ -753,7 +811,6 @@ div#ojAppNav2 ul.oj-navigationlist-element {
     border-radius: 83px;
     height: 156px;
     width: 156px;
-    margin-top: 10px;
     border: 5px solid #ffffff;
 }
 #MyNotifications .tcrow .theadcount span.approveicon, #MyNotifications .tcrow .tnewhire span.waitingicon, #MyNotifications .tcrow .ttermin span.rejectedicon {
@@ -779,17 +836,17 @@ li.peoplephone {
     padding-left: 0px;
 }
 li.peoplephone div div.demo-employee-name {
-   color: #000000;
-   font-weight: normal;
-   font-size: 18px;
-   padding-left: 20px;
-   overflow: hidden;
-   white-space: nowrap;
+    color: #000000;
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 20px;
+    overflow: hidden;
+    white-space: nowrap;
 }
 li.peoplephone div div.demo-employee-title {
-   padding-left: 20px;
-   white-space: nowrap;
-   overflow: hidden;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 li.peoplephone div div img.demo-circular {
     border-radius: 20px;
@@ -825,6 +882,49 @@ li.peoplephone div div a.people-phone-mobile-icon {
     font-weight: bold;
 }
 /*===========CODE MODIFIED FOR TABS ENDS============*/
+
+/* masonry layout */
+.justifyCenterMasonryLayout {
+    text-align: center;
+}
+
+.justifyCenter.justifyCenterMasonryLayout > .oj-masonrylayout {
+    display: inline-block;
+    /* width = 1 * (224 + 8 + 8) = 240 */
+    width: 240px;
+}
+
+/* min-width = 480 + 40 [total padding of ancestor elements] = 520 */
+@media (min-width: 520px) {
+    .justifyCenter.justifyCenterMasonryLayout > .oj-masonrylayout {
+        /* width = 2 * (224 + 8 + 8) = 480 */
+        width: 480px;
+    }
+}
+
+/* min-width = 720 + 40 [total padding of ancestor elements] = 760 */
+@media (min-width: 760px) {
+    .justifyCenter.justifyCenterMasonryLayout > .oj-masonrylayout {
+        /* width = 3 * (224 + 8 + 8) = 720 */
+        width: 720px;
+    }
+}
+
+/* min-width = 960 + 40 [total padding of ancestor elements] = 1000 */
+@media (min-width: 1000px) {
+    .justifyCenter.justifyCenterMasonryLayout > .oj-masonrylayout {
+        /* width = 4 * (224 + 8 + 8) = 960 */
+        width: 960px;
+    }
+}
+
+/* min-width = 1200 + 40 [total padding of ancestor elements] = 1240 */
+@media (min-width: 1240px) {
+    .justifyCenter.justifyCenterMasonryLayout > .oj-masonrylayout {
+        /* width = 5 * (224 + 8 + 8) = 1200 */
+        width: 1200px;
+    }
+}
 
 /* masonry tile */
 .oj-masonrylayout-tile-transition-move-to {
@@ -969,13 +1069,13 @@ li.peoplephone div div a.people-phone-mobile-icon {
 }
 
 #infoCategories .oj-navigationlist-item .oj-navigationlist-item-label {
-  color: #000000;
-  font-size: 16px;
-  font-family: "Helvetica Neue", Helvetica, Ariel, sans-serif;
+    color: #000000;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Ariel, sans-serif;
 }
 
 #infoCategories .oj-navigationlist-item.oj-selected .oj-navigationlist-item-label {
-  color: #045fab;
+    color: #045fab;
 }
 
 .demo-navi-icon-phone{
@@ -1038,31 +1138,31 @@ li.peoplephone div div a.people-phone-mobile-icon {
 /* Nav List Phone Layout End */
 
 .demo-oracle-icon {
-  width: 137px;
-  height: 18px;
+    width: 137px;
+    height: 18px;
 }
 .demo-oracle-icon:before {
-  content: url("images/oracle_logo.svg");
-  display: inline;
+    content: url("images/oracle_logo.svg");
+    display: inline;
 }
 /* Adds padding between logo and application name */
 html:not([dir="rtl"]) .demo-oracle-icon {
-  padding-right: 4px;
+    padding-right: 4px;
 }
 html[dir="rtl"] .demo-oracle-icon {
-  padding-left: 4px;
+    padding-left: 4px;
 }
 
 .demo-avatar-icon {
-  width:24px;
-  height:24px;
+    width:24px;
+    height:24px;
 }
 .demo-avatar-icon:before {
-  content:url("images/avatar_24px.png")
+    content:url("images/avatar_24px.png")
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  .demo-avatar-icon:before{
-    content:url("images/avatar_24px_2x.png");
-    -webkit-transform:translate(-25%, -25%) scale(0.5);transform:translate(-25%, -25%) scale(0.5)
-  }
+    .demo-avatar-icon:before{
+        content:url("images/avatar_24px_2x.png");
+        -webkit-transform:translate(-25%, -25%) scale(0.5);transform:translate(-25%, -25%) scale(0.5)
+    }
 }

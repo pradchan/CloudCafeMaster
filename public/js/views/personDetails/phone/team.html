@@ -1,11 +1,11 @@
 <!--
- Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  The Universal Permissive License (UPL), Version 1.0
  -->
 <div class="oj-panel" style="margin-bottom:10px">
     <ul id="listview"
         data-bind="ojComponent: {component: 'ojListView', 
-            data: orgPeopleDataSource,
+            data: $parent.orgPeopleDataSource,
             item: {template: 'peoplelist_template'}, 
             selectionMode: 'single',
             currentItem: '205',
@@ -17,11 +17,11 @@
 </div>
 
 <script id="peoplelist_template" type="text/html">
-    <li class="oj-flex-item oj-sm-12 peoplephone" data-bind="click: function(data) { $parent.goEmp(data.empId) }, clickBubble: false">
+    <li class="oj-flex-item oj-sm-12 peoplephone" data-bind="click: function(data) { $parents[1].goEmp(data.empId) }, clickBubble: false">
         <div>
             <div class="oj-flex oj-flex-items-pad">
                 <div class="oj-flex-item oj-sm-1">
-                    <img class="demo-circular demo-employee-photo" data-bind="attr: {src: $parent.getPhoto($data['empId'])}"/>
+                    <img class="demo-circular demo-employee-photo" data-bind="attr: {src: $parents[1].getPhoto($data['empId'])}"/>
                 </div>
                 <div class="oj-flex-item oj-sm-7">
                     <div class="demo-employee-name" data-bind="text: $data['firstName'] + ' ' + $data['lastName']"></div>

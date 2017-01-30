@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2014, 2016, Oracle and/or its affiliates.
+ * Copyright (c) 2014, 2017, Oracle and/or its affiliates.
  * The Universal Permissive License (UPL), Version 1.0
  */
 define(['ojs/ojcore', 'knockout', 'data/data', 'moment', 'ojs/ojknockout', 'ojs/ojvalidation', 'ojs/ojtagcloud', 'ojs/ojchart'],
@@ -14,7 +14,8 @@ define(['ojs/ojcore', 'knockout', 'data/data', 'moment', 'ojs/ojknockout', 'ojs/
                 self.personProfile = ko.observableArray([]);
                 self.people = ko.observableArray([]);
                 self.infoTiles = ko.observableArray();
-                self.employeePhoto = ko.observable();
+                self.employeePhoto = ko.observable();                
+                self.expandedTab = ko.observable(false);
                 self.selectedTab = ko.observable(1);
                 self.detailsContentTemplate = ko.observable('personDetails/about');
                 self.empId = ko.observable('');
