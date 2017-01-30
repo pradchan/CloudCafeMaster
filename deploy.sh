@@ -8,11 +8,11 @@
 export ID_DOMAIN=$1
 export USER_ID=$2
 export USER_PASSWORD=$3
-export APP_NAME=$4
-export ARCHIVE_FILE=$5
+export APP_NAME="CloudCafeApp"
+export ARCHIVE_FILE="CloudCafeJET.zip"
 export ARCHIVE_LOCAL=$ARCHIVE_FILE
-export APAAS_HOST=$6
-export RUNTIME=$7
+export APAAS_HOST=$4
+export RUNTIME=$5
 
 # ZIP PROJECT
 zip -r ${ARCHIVE_FILE} .
