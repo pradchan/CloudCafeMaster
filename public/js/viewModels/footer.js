@@ -18,6 +18,7 @@ define(['ojs/ojcore' ,'knockout'
                 var legalNotices = 'http://www.oracle.com/us/legal/index.html';
                 var termsOfUse = 'http://www.oracle.com/us/legal/terms/index.html';
                 var privacyRights = 'http://www.oracle.com/us/legal/privacy/index.html';
+                var gsedemos = 'http://demo.oracle.com';
 
                 self.ojVersion = ko.observable('v' + oj.version + ', rev: ' + oj.revision);
 
@@ -26,7 +27,8 @@ define(['ojs/ojcore' ,'knockout'
                     new FooterNavModel('Contact Us', 'contactUs', contactUs),
                     new FooterNavModel('Legal Notices', 'legalNotices', legalNotices),
                     new FooterNavModel('Terms Of Use', 'termsOfUse', termsOfUse),
-                    new FooterNavModel('Your Privacy Rights', 'yourPrivacyRights', privacyRights)
+                    new FooterNavModel('Your Privacy Rights', 'yourPrivacyRights', privacyRights),
+                    new FooterNavModel('GSE Demos', 'gsedemos', gsedemos)
                 ]);
 
             }

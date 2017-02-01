@@ -1,3 +1,3 @@
 #!/bin/sh
  
-zip -r CloudCafeJET.zip .
+zip -r CloudCafeJETApp.zip .
