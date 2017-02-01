@@ -8,8 +8,8 @@
 export ID_DOMAIN=$1
 export USER_ID=$2
 export USER_PASSWORD=$3
-export APP_NAME="CloudCafeApp"
-export ARCHIVE_FILE="CloudCafeJET.zip"
+export APP_NAME="CloudCafeJETApp"
+export ARCHIVE_FILE="CloudCafeJETApp.zip"
 export ARCHIVE_LOCAL=$ARCHIVE_FILE
 export APAAS_HOST=$4
 export RUNTIME=$5
